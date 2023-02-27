@@ -13,12 +13,14 @@ COPY ["kong-plugin-jwt-claims-to-headers-1.0.0-1.rockspec", "./"]
 COPY ["casbin-1.16.1-1.rockspec", "./"]
 COPY ["casbin-adapter-1.0.0-1.rockspec", "./"]
 COPY ["kong-authz-0.0.1-1.rockspec", "./"]
+COPY ["kong-plugin-http-log-with-body-0.1.1-2.rockspec", "./"]
 
 RUN luarocks install luasql-mysql MYSQL_INCDIR=/usr/include/mysql
 RUN luarocks install ./kong-plugin-jwt-claims-to-headers-1.0.0-1.rockspec
 RUN luarocks install ./casbin-1.16.1-1.rockspec
 RUN luarocks install ./casbin-adapter-1.0.0-1.rockspec
 RUN luarocks install ./kong-authz-0.0.1-1.rockspec
+RUN luarocks install ./kong-plugin-http-log-with-body-0.1.1-2.rockspec
 
 RUN rm *.rockspec
 
